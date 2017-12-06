@@ -6,15 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
-import RootReducer from './reducers';
-
+import RootReducer from './reducers/index.js';
+import App from './App.js';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(RootReducer)}>
-
-  </Provider>
-
-
-
-  , document.querySelector('.container'));
+ReactDOM.render(<Provider store={createStoreWithMiddleware(RootReducer)}><App/></Provider>, document.querySelector('div'));

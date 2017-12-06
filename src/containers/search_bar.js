@@ -8,6 +8,7 @@ import {fetchWeather} from '../actions/index.js';
     this.state={term:''};
     this.onInputChange=this.onInputChange.bind(this)//2nd this is the the reference of SearchBar which has function onInputChange, bind that function to SearchBar class and replace
     //existing finction with it. Means we are overritting this method with this component method
+    this.onFormSubmit=this.onFormSubmit.bind(this);
 
   }
 
