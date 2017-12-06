@@ -1,0 +1,10 @@
+
+export   function ReduerBooks()
+{
+   // alert('hi Reducer')
+   return [
+{title:'Book1',pages:'50'},
+{title:'Book2',pages:'150'},
+{title:'Book31',pages:'250'}
+    ];
+}
