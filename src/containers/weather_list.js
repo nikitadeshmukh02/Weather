@@ -1,25 +1,31 @@
 import React,{Component} from 'react'
 import { connect} from 'react-redux'
 import mapDispatchToProps from 'redux'
-import {Sparklines,SparklinesLine}  from 'react-sparklines'
+import Chart from '../components/chart'
 export  class WeatherList extends Component{
 
   renderWeather(cityData)
   {
     const temps=cityData.list.map(weather=>weather.main.temp)
+    const humidity=cityData.list.map(weather=>weather.main.humidity)
+    const pressure=cityData.list.map(weather=>weather.main.pressure)
+
+
     console.log(temps)
       return(
         <tr className='rows'  key={cityData.city.name}>
         <td className='cols-3'>
         {cityData.city.name}
-
         </td>
         <td className='cols-3'>
-       <Sparklines height={120} width={180} data={temps}>
-<SparklinesLine color="blue"/>
-       </Sparklines>
+<Chart data={temps} color="blue"/>
+        </td>
 
-
+        <td className='cols-3'>
+<Chart data={pressure} color="pink"/>
+        </td>
+        <td className='cols-3'>
+<Chart data={humidity} color="orange"/>
         </td>
         </tr>
       )
